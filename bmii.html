@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <link rel="stylesheet" href="stylee.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+    <script src="functions.js" async></script>
+    
+    <meta charset="utf-8">
+    <title>BMI</title>
+    <script language="JavaScript">
+
+function calculateBmi() {
+var weight = document.bmiForm.weight.value
+var height = document.bmiForm.height.value
+if(weight > 0 && height > 0){
+var finalBmi = weight/(height/100*height/100)
+document.bmiForm.bmi.value = finalBmi
+if(finalBmi < 18.5){
+document.bmiForm.meaning.value = "That you are too thin."
+}
+if(finalBmi > 18.5 && finalBmi < 25){
+document.bmiForm.meaning.value = "That you are healthy."
+}
+if(finalBmi > 25){
+document.bmiForm.meaning.value = "That you have overweight."
+}
+}
+else{
+alert("Please Fill in everything correctly")
+}
+}
+//-->
+    </script>
+</head>
+<body>
+    <header class="head">
+        <div class="k" ><iframe src="https://giphy.com/embed/26BRq9PYFLeJl3WLu" width="170" height="170"  padding="0"  ></iframe>
+        </div>
+        <div class="title">
+            <p><span class="fitguide"> FIT GUIDE </span><span class="way">A WAY OF LIVING LIFE</span></p>
+        </div>
+    </header>
+    <nav class="navbar">
+        <a class="bmi" href=bmii.html>BMI</a>
+        <a class="home"href=home.html>HOME</a>
+        <a class="workout"href=workout.html>WORKOUT </a>
+        <a class="diet"href=diet.html>DIET</a>
+        <a class="yoga"href=yoga.html>YOGA</a>
+        <a class="mental" href=mental.html>MENTAL HEALTH</a>
+        <a class="dance"href=dance.html>DANCE</a>
+        <a class="about"href="blogspot.html">ABOUT US</a>
+        <div id="sign"> <a class="signin" href="signinform.html"><button>PARTNER</button></a>
+        </div>
+    </nav>
+    <div class="form">
+
+      <form name="bmiForm" class="bmi">
+        Your Weight(kg): <input type="text" name="weight" size="10"><br />
+        Your Height(cm): <input type="text" name="height" size="10"><br />
+        <input type="button" value="Calculate BMI" onClick="calculateBmi()"><br />
+        <br/>
+        Your BMI: <input type="text" name="bmi" size="10"><br />
+        This Means: <input type="text" name="meaning" size="25"><br />
+        <input type="reset" value="Reset" />
+       </form>
+    </div>
+
+
+
+</body>
+</html>
